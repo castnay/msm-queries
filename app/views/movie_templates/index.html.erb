@@ -1,6 +1,7 @@
 <h1>List of all movies</h1>
 
-<%= @list_of_movies.each do |each_movie|%>
+<table border ="1">
+<% @list_of_movies.each do |each_movie|%>
 <tr>
     <td>
       <%= each_movie.id %></td>
@@ -14,7 +15,8 @@
       <%= each_movie.year %>
     </td>
      <td>
-      <% d = Director.where({ :id => a_film.director_id}).at(0)%>
+      <% d = Director.where({ :id => each_movie.director_id}).at(0)%>
+      <%= d.name %>
     </td>
     <td>
       <a href= "/movies/<%= each_movie.id%>">
@@ -23,3 +25,4 @@
     </td>
 </tr>
 <% end %>
+</table>

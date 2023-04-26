@@ -45,7 +45,7 @@ Tarantino has been romantically linked with numerous entertainers, including act
 Description above from the Wikipedia article Quentin Tarantino, licensed under CC-BY-SA, full list of contributors on Wikipedia.
   </dd>
   <dt>
-    <%= @the_director.image %>
+    <img src = "http://robohash.org/<%= @the_director.image%>">
   </dt>
   <dt>
     Created at
@@ -72,7 +72,7 @@ Description above from the Wikipedia article Quentin Tarantino, licensed under C
     <%= a_film.id %>
   </td>
    <td>
-    <%= a_film.image %>
+    <img src = "http://robohash.org/<%= a_film.image%>">
   </td>
    <td>
     <%= a_film.title %>
@@ -85,7 +85,7 @@ Description above from the Wikipedia article Quentin Tarantino, licensed under C
     <%= d.name%>
   </td>
    <td>
-    <a href="">
+    <a href="/movies/<%=a_film.id%>">
       Show Details
     </a>
   </td>
