@@ -25,6 +25,7 @@ class DirectorsController < ApplicationController
   end
 
   def green
+    @youngest_director = Director.where.not({ :dob => nil }).order({ :dob => :desc }).at(0)
 
     render({ :template => "director_templates/junior.html.erb" })
   end
