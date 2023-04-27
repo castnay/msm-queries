@@ -8,12 +8,10 @@ class MoviesController < ApplicationController
 
 
 def movie_details
-  #@movie_name = 
-  #Parameters: {"an_id"=>"1"}
-  #<%=@movie_name%>
-  @movie_num = params.fetch("movie_id")
-  @movie_name = 
-
+  
+  movie_num = params.fetch("an_id")
+  @movie = Movie.where({ :id => movie_num }).at(0)
+  
   render({ :template => "movie_templates/movie_bio.html.erb" })
 end
 
